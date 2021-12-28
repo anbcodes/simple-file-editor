@@ -1,0 +1,7 @@
+FROM denoland/deno:1.17.1
+
+ADD . .
+
+RUN deno cache main.ts
+
+CMD ["run", "--allow-net", "--allow-read=/file.txt", "--allow-write=/file.txt"
